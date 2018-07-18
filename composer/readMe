@@ -1,0 +1,3 @@
+执行下载命令composer install 安装HTTP组件和CSV处理组件
+进入到scan.php文件所在目录执行如下命令
+php scan.php ./urls.csv
