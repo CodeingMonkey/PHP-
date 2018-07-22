@@ -15,7 +15,15 @@
  */
 
 $start = new DateTime();
-$interval = new DateInterval('P2D');
+/**
+ * 直接实例化DateInterval实例,构造函数的参数中的整数不能为负数
+ */
+$interval = new DateInterval('P1D');
+
+/**
+ * 通过createFromDateString方法生成一个DateInterval实例
+ */
+$interval = DateInterval::createFromDateString('-1 day');
 $end = 10;
 
 /**
