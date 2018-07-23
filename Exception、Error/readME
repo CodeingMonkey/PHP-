@@ -1,1 +1,3 @@
 测试当前whoops组件和monolog组件时，请先执行composer install
+
+关于日志最后有[]的解决方案：https://cloud.tencent.com/developer/ask/83307
