@@ -1,0 +1,6 @@
+{
+    "require": {
+        "filp/whoops": "^2.2",
+        "monolog/monolog": "^1.23"
+    }
+}
