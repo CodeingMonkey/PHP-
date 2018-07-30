@@ -11,7 +11,7 @@ require  'vendor/autoload.php';
 $client = new \GuzzleHttp\Client();
 /**
  * 打开并且读取CSV文件
- * $argv — 传递给脚本的参数数组
+ * $argv — 命令行传递给脚本的参数数组
  * 第一个参数总是当前脚本的文件名，因此 $argv[0] 就是脚本文件名。本例中要取传来的csv所在文件路径，所以取第一个参数
  */
 

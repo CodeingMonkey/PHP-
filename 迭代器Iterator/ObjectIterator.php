@@ -69,7 +69,10 @@ class ObjectIterator implements Iterator {
 }
 
 $string = new ObjectIterator('这个是什么213jdjlf');
-
+/**
+ * 遍历$string对象，
+ * ObjectIterator实现了Iterator接口，然后实现了Iterator的五个方法，遍历$string对象就是按照指定的顺序执行了五个方法
+ */
 foreach ($string as $k => $v) {
     echo $v;
     echo '<br>';

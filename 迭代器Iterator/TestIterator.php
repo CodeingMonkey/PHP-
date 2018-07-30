@@ -3,6 +3,8 @@
 /**
  * Class TestIterator
  * 迭代器
+ * 迭代器方法执行顺序，rewind->valid->current->key->next->valid->current->key->next
+ * 迭代器是一个接口，提供了五个方法，具体你需要用方法去做什么 需要依据具体的实现代码
  */
 class TestIterator implements Iterator {
     private $position = 0;
@@ -26,6 +28,9 @@ class TestIterator implements Iterator {
      * 开始一个for循环的时候，这是第一个被调用的方法，将不会在foreach循环之后被调用。（只被调用一次）
      */
     function rewind() {
+        /**
+         * 显示当前方法名称
+         */
         var_dump(__METHOD__);
         echo '<br>';
         $this->position = 0;

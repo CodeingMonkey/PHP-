@@ -18,6 +18,9 @@ $dateInterval = new DateInterval('P0DT2H');
  */
 $dateTimeZone = new DateTimeZone('Asia/shanghai');
 
+/**
+ * 实例化时间对象
+ */
 $dateTime = new DateTime(null, $dateTimeZone);
 
 echo $dateTime->format('Y m d H:i:s');

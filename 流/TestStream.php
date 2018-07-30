@@ -41,7 +41,7 @@ while (feof($handle) !== true) {
     /**
      * 从文件指针中读取一行，
      * length指从handle指向的文件中读取一行并返回长度最多为length-1的字符串，碰到换行符，EOF、或者读取满足长度会自动结束
-     * 没有指定length的话，默认时1024字节
+     * 没有指定length的话，默认是1024字节，新版PHP默认是读取一行
      */
     echo fgets($handle, 10);
     echo '<br>';

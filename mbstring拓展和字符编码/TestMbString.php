@@ -13,7 +13,7 @@ echo mb_strlen($str);
 echo '<br>';
 
 /**
- * 中文是多字节字符，每个字符占三个字节，所以使用strlen结果是6
+ * 中文是多字节字符，每个字符占三个字节（UTF-8编码下），所以使用strlen结果是6
  */
 echo strlen($mbStr);
 echo '<br>';

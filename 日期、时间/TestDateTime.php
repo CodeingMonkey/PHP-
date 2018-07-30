@@ -7,7 +7,7 @@ date_default_timezone_set("Asia/shanghai");
 
 /**
  * DateTime是一个类，继承了DateTimeInterface接口
- * 两个参数，第一参数表示想要实例化的时间，不填为默认时间，第二个参数是DateTimeZone的实例化对象
+ * 两个参数，第一参数表示想要实例化的时间，不填为默认当前时间，第二个参数是DateTimeZone(时区)的实例化对象
  * DateTimeZone实例化对象代表时间是对那个时区而言的
  */
 $dateTimeZone = new DateTimeZone('Asia/shanghai');

@@ -47,7 +47,7 @@ $statement = $pdo->prepare($sql);
 $id = filter_input(INPUT_GET, 'id');
 
 /**
- * bindValue实际是在绑定的时候就将值绑定在sql对应的占位符上，即便后期bindValue绑定的值发生改变也不回造成影响
+ * bindValue实际是在绑定的时候就将值绑定在sql对应的占位符上，即便后期bindValue绑定的值发生改变也不会造成影响
  */
 $statement->bindValue(':id', $id, PDO::PARAM_INT);
 
@@ -72,10 +72,10 @@ try {
     /**
      * fetch从结果集中获取下一行（获取结果集的第一行）
      * fetch和fetchAll第一个参数决定返回结果的格式
-     * PDO::FETCH_ASSOC返回一个数据组，数组的键是表的列名
+     * PDO::FETCH_ASSOC返回一个数组，数组的键是表的列名
      * PDO::FETCH_NUM返回的数组的键就是普通的0、1、2这种
      * PDO::FETCH_BOTH返回结果中包括上面两种
-     * PDO::FETCH_OBJ返回的是一个对象，对象的属性是表的列明
+     * PDO::FETCH_OBJ返回的是一个对象，对象的属性是表的列名
      */
     $res = $statement->fetch(PDO::FETCH_ASSOC);
     /**

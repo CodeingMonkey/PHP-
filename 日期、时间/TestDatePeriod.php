@@ -21,7 +21,7 @@ $start = new DateTime();
 $interval = new DateInterval('P1D');
 
 /**
- * 通过createFromDateString方法生成一个DateInterval实例
+ * 通过createFromDateString方法生成一个DateInterval实例（相比直接实例化的方式时间限制可以为负数）
  */
 $interval = DateInterval::createFromDateString('-1 day');
 $end = 10;
@@ -33,6 +33,9 @@ $end = 10;
 $datePeriod = new DatePeriod($start, $interval, $end, DatePeriod::EXCLUDE_START_DATE);
 
 
+/**
+ * DatePeriod实现了Traversable，for循环实际上就是对象遍历
+ */
 foreach ($datePeriod as $item) {
     /**
      * 格式化输出
