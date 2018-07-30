@@ -8,17 +8,17 @@ $message = 'debug';
 $example = function () {
     echo $message;
 };
-echo $example();
+$example();
 echo '<br>';
 
 /**
- * 闭包可以从父作用于（可以理解是闭包之前的代码）继承变量，并且在闭包中使用
+ * 闭包可以从父作用域（可以理解是闭包之前的代码）继承变量，并且在闭包中使用
  * 但是使用这样的变量，必须使用use语言结构将变量传递到闭包函数中
  */
 $example = function () use ($message) {
     var_dump($message);
 };
-echo $example();
+$example();
 echo '<br>';
 
 /**

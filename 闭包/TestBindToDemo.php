@@ -62,7 +62,7 @@ $test->test('debug', function () {
 
 $info = $test->getInfo();
 /**
- * 这时test对象的info属性（本例中为数组）的每个元素对应的value都是一个闭包。
+ * 这时test对象的info属性（本例中为数组）的每个元素对应的value都是一个闭包(闭包本质上就是一个对象)
  */
 foreach ($info as $key => $value) {
     /**
