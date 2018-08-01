@@ -77,7 +77,7 @@ $test->pwd = 'admin';
 
 $reflect = new ReflectionObject($test);
 /**
- * 获取对象属性列表
+ * 获取对象属性列表（只能获取类定义的属性）
  */
 $pros = $reflect->getProperties();
 
