@@ -16,11 +16,10 @@ class Test {
      */
     public function __call($name, $arguments)
     {
-        // TODO: Implement __call() method.
-        print_r($name);
-        print_r($arguments);
+       $this->$name($arguments);
 
     }
+
 
 }
 
