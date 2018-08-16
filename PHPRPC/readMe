@@ -1,0 +1,18 @@
+phprpc的使用示例以及报错Fatal error: Cannot redeclare gzdecode()
+
+解决方案：
+php在5.4版本后，已经自包含了gzdecode()函数，开发者自己定义的gzdecode()函数会与其冲突。
+
+      知道了错误的原因，解决起来也就很方便了。在 ....\phpRPC\compat.php文件的第72行(这里，可能有所不同)，找到function gzdecode($data, &$filename = '', &$error = '', $maxlength = null) ，把这个函数用下面的代码包括起来：
+
+if (! function_exists('gzdecode')) {
+    //将gzdecode函数包括进来
+ }
+
+。这样做了之后，再次运行程序，得到了我们想要的结果：
+
+
+
+
+
+https://blog.csdn.net/whq19890827/article/details/46952723
