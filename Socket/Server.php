@@ -44,7 +44,7 @@ echo $message;
 socket_write($accept_resource, 'success', strlen('success'));
 
 /**
- * 关闭socket
+ * 关闭socket(先关闭接收的客户端的资源、然后关闭服务器启动的socket)
  */
 socket_close($accept_resource);
 socket_close($socket);

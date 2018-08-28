@@ -60,6 +60,7 @@ call_user_func(array(TestCallUserFunc::class, 'index'), 'admin', 'password');
 
 /**
  * call_user_func_array，和call_user_func方法的不同，回调函数的参数，表现为参数数组
+ * call_user_func_array参数可以传引用，call_user_func不可以传引用
  */
 call_user_func_array(array('TestCallUserFunc', 'index'), ['admin', 'password']);
 
