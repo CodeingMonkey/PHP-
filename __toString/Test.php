@@ -57,6 +57,7 @@ echo '<br>';
  * 类属性声明为static，不能通过对象去调用，可以Class::Attribute调用
  */
 echo $test->pwd;
+echo Test::$pwd;
 echo '<br>';
 
 /**
