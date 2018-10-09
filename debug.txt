@@ -1,0 +1,57 @@
+<form class="form-horizontal form-commonsearch nice-validator n-default" action="" novalidate="novalidate">
+    <fieldset>
+        <div class="row">
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="is_reply" class="control-label col-xs-4">响应时间</label>
+                <div class="col-xs-8">
+                    <input type="hidden" class="form-control operate" name="field-is_reply" data-name="is_reply" value="=" readonly="">
+                    <select class="form-control" name="is_reply">
+                        <option value="">选择</option>
+                        <option value="0">超出十分钟响应</option>
+                        <option value="1">十分钟内响应</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="start_time" class="control-label col-xs-4">开始时间</label>
+                <div class="col-xs-8" style="position: relative;">
+                    <input id="startTime" type="text"  class="datetimepicker form-control form_datetime" name="startTime">
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="end_time" class="control-label col-xs-4">结束时间</label>
+                <div class="col-xs-8" style="position: relative;">
+                    <input id="endTime" type="text"  class="datetimepicker form-control form_datetime" name="endTime">
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-sm-8 col-xs-offset-4">
+                    <button type="submit" class="btn btn-success">提交</button>
+                    <button type="reset" class="btn btn-default">重置</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+<script>
+    $('.datetimepicker').datetimepicker({
+        locale: "zh-cn",
+        dayViewHeaderFormat: 'YYYY-MM-DD',
+        icons: {
+            time: 'fa fa-clock-o',
+            date: 'fa fa-calendar',
+            up: 'fa fa-chevron-up',
+            down: 'fa fa-chevron-down',
+            previous: 'fa fa-chevron-left',
+            next: 'fa fa-chevron-right',
+            today: 'fa fa-history',
+            clear: 'fa fa-trash',
+            close: 'fa fa-remove'
+        },
+        showTodayButton: true,
+        showClose: true
+    })
+
+</script>
