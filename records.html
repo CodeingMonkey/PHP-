@@ -1,0 +1,134 @@
+<!--搜索条件 Form表单形式请求后台链接-->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head></head>
+<body>
+<!--<div >
+    <div class="input-daterange input-group" id="datepicker">
+        <input type="text" class="input-sm form-control" name="start" />
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control" name="end" />
+    </div>
+</div>
+<script>
+
+$('.input-daterange').datepicker({
+    format: 'yyyy/mm/dd',
+    language: 'cn',
+}).on('changeDate', function(ev){
+    console.error(ev)
+})
+
+</script>-->
+
+<form class="form-horizontal form-commonsearch nice-validator n-default" action="" novalidate="novalidate">
+    <fieldset>
+        <div class="row">
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="is_reply" class="control-label col-xs-4">响应时间</label>
+                <div class="col-xs-8">
+                    <input type="hidden" class="form-control operate" name="field-is_reply" data-name="is_reply" value="=" readonly="">
+                    <select class="form-control" name="is_reply">
+                        <option value="">选择</option>
+                        <option value="0">超出十分钟响应</option>
+                        <option value="1">十分钟内响应</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="start_time" class="control-label col-xs-4">开始时间</label>
+                <div class="col-xs-8" style="position: relative;">
+                    <input id="startTime" type="text"  class="datetimepicker form-control form_datetime" name="startTime">
+                </div>
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <label for="end_time" class="control-label col-xs-4">结束时间</label>
+                <div class="col-xs-8" style="position: relative;">
+                    <input id="endTime" type="text"  class="datetimepicker form-control form_datetime" name="endTime">
+                </div>
+            </div>
+
+            <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="col-sm-8 col-xs-offset-4">
+                    <button type="submit" class="btn btn-success">提交</button>
+                    <button type="reset" class="btn btn-default">重置</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
+
+<div class="panel-body">
+    <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade active in" id="one">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="echart_xd" style="height:300px;width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+    require(['bootstrap-datetimepicker'], function () {
+        var options = {
+            format: 'YYYY-MM-DD',
+            icons: {
+                time: 'fa fa-clock-o',
+                date: 'fa fa-calendar',
+                up: 'fa fa-chevron-up',
+                down: 'fa fa-chevron-down',
+                previous: 'fa fa-chevron-left',
+                next: 'fa fa-chevron-right',
+                today: 'fa fa-history',
+                clear: 'fa fa-trash',
+                close: 'fa fa-remove'
+            },
+            showTodayButton: true,
+            showClose: true
+        };
+        $('.datetimepicker').parent().css('position', 'relative');
+        $('.datetimepicker').datetimepicker(options);
+    });
+</script>
+<script>
+// 下单
+    var rst_xd = {:json_encode($list)};
+    var rst_xd_tag = rst_xd.tag_name;
+    var xd_data_array = get_data_array(rst_xd_tag, rst_xd);
+
+    function get_data_array(array, all) {
+        var data_array = [];
+        $.each(array, function(index, value){
+            data_array.push(
+                {
+                    name: value,
+                    type: 'line',
+                    smooth: true,
+                    areaStyle: {
+                        normal: {
+                        }
+                    },
+                    lineStyle: {
+                        normal: {
+                            width: 1
+                        }
+                    },
+                    data: all['tag'][value]
+                }
+            );
+        })
+        return data_array;
+    }
+
+</script>
+
+<script src="/assets/js/handlebars.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
